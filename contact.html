@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div
+      class="container bg-info ms-2 mt-2 rounded-2 border border-3 border-success"
+    >
+      <div class="header d-flex justify-content-center">
+        <h2>Register Form</h2>
+      </div>
+      <form class="row g-2 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for=""> First name</label>
+          <input
+            type="text"
+            placeholder="Enter your First Name"
+            class="form-control"
+            required
+          />
+
+          <div class="invalid-feedback">
+            <p>you must be put required information</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for=""> Second name</label>
+          <input
+            type="text"
+            placeholder="Enter your Second Name"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">
+            <p>completed</p>
+          </div>
+          <div class="invalid-feedback">
+            <p>you must be put required information</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="">Email</label>
+          <input type="text" class="form-control" required />
+          <div class="valid-feedback">
+            <p>completed</p>
+          </div>
+          <div class="invalid-feedback">
+            <p>you must be put required information</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-2">
+          <label for="">Password</label>
+          <input type="password" class="form-control" required />
+          <div class="valid-feedback">
+            <p>Good Password</p>
+          </div>
+          <div class="invalid-feedback">
+            <p>please enter your password</p>
+          </div>
+        </div>
+        <div class="col-md-12 mt-2">
+          <label for="">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="123Main St"
+            required
+          />
+          <div class="valid-feedback">
+            <p>completed</p>
+          </div>
+          <div class="invalid-feedback">
+            <p>please enter your</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-2">
+          <label for="">City</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="col-md-4 mt-2">
+          <label for="">State</label>
+          <select class="form-select">
+            <option selected>Choose</option>
+            <option selected>B.Baria</option>
+            <option selected>Sorail</option>
+            <option selected>Natai</option>
+            <option selected>Medda</option>
+          </select>
+        </div>
+        <div class="col-md-2 mt-2">
+          <label for="">Zip</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-check col-md-12">
+          <input type="checkbox" class="form-check-input" id="check" required />
+          <label for="check" class="form-check-label"> Check Me Out</label>
+          <div class="valid-feedback">
+            <p>checked</p>
+          </div>
+          <div class="invalid-feedback">
+            <p>you must be checkout before submited</p>
+          </div>
+        </div>
+
+        <div class="col-md-12 m-5 ms-2">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const forms = document.querySelectorAll(".needs-validation");
+
+      <!-- // Loop over them and prevent submission -->
+      Array.from(forms).forEach((form) => {
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    </script>
+  </body>
+</html>
